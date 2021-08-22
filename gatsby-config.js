@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Pokedex App using Gatsby Default Starter`,
-    description: `A serverless Pokedex Application to learn the JAMStack `,
+    description: `A serverless Application to get familar with the JamStack. By Crisdell James Ines `,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
