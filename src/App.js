@@ -99,10 +99,18 @@ function App() {
                 <h3>This is a sample application using Gatsby</h3>
                 <StaticImage
                 src="./images/gatsby-icon.png"
-                width={200}
+                width={120}
                 quality={95}
                 formats={["AUTO", "WEBP", "AVIF"]}
                 alt="A Gatsby astronaut"
+                style={{ marginBottom: `1.45rem` }}
+                />
+                <StaticImage
+                src="./images/logo192.png"
+                width={120}
+                quality={95}
+                formats={["AUTO", "WEBP", "AVIF"]}
+                alt="React logo"
                 style={{ marginBottom: `1.45rem` }}
                 />
                 <h4>Created by CJ.INES@OUTLOOK.PH</h4>
