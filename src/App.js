@@ -52,11 +52,17 @@ function App() {
      setStarList([...starList, pokemon])
    } else if (action === 'unstar') {
      let list = starList.filter((star) => star.name != pokemon.name);
-     setStarList([...list])
+     setStarList([...list]);
+     if (activeFilter === 'star') {
+       setPokemonList(list);
+     }
    } else if (action === 'view') {
      setActiveName(pokemon.name);
    } else if (action === 'catch') {
-       setCaughtList([...caughtList, pokemon])
+       setCaughtList([...caughtList, pokemon]);
+       if (activeFilter === 'caught') {
+        setPokemonList(caughtList);
+      }
    }
   }
 
