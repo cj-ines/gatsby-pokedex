@@ -85,7 +85,7 @@ body {
   flex-grow: 1;
   display: grid;
   padding: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 5px;
 }
 
@@ -207,10 +207,12 @@ body {
 .pokemon-portrait-stat {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .pokemon-portrait {
   margin-right: 15px;
-  height:  320px;
+  height:  75%;
+  width: 75%;
 }
 .pokemon-stats {
   flex-grow: 1;
