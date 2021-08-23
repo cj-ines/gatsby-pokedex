@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400&display=swap');
 
 .App {
   text-align: center;
@@ -112,7 +112,6 @@ body {
 
 .pokemon-head {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: smaller;
@@ -121,6 +120,38 @@ body {
 .pokemon-head-name {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.h-5.w-5 {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.pokemon-head-icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon-sprite-container {
+  height: 50px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: #8f8f8f;
+  margin: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+
+}
+
+.icon-sprite-container.-active {
+  background-color: #61dafb;
+  
 }
 
 .paging {
@@ -387,6 +418,7 @@ h1 {
 .dropdown-item>span {
   cursor: pointer;
   flex-grow: 1;
+  color: #282c34;
 }
 
 .dropdown-item .delete {
@@ -411,4 +443,39 @@ h1 {
   display: inline-block;
   fill: #61dafb;
   transition: 500ms;
+}
+
+.button-filter {
+  padding: 5px 6px;
+  background: none;
+  border: 2px solid #61dafb;
+  border-radius: 5px;
+  font-size: 10pt;
+  cursor: pointer;
+  transition: 400ms;
+  text-transform: uppercase;
+  margin-left: 5px;
+}
+
+.button-filter:hover {
+  background-color: #555;
+}
+
+.button-filter.-active {
+  background-color: #61dafb;
+  color: #333;
+}
+
+.button-filter>span {
+  height: 20px;
+  width: 20px;
+  background-color: #555;
+  font-weight: bold;
+  font-family: monospace;
+  display: inline-flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: #61dafb;
+
 }
