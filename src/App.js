@@ -8,6 +8,7 @@ import PokemonDetail from './PokemonDetail';
 import NavigationBar from './NavigationBar';
 import StarWidget from './StarWidget';
 import filterWidget from './filterWidget';
+import AboutAuthor from './components/AboutAuthor';
 
 function App() {
   const title ="Crisdell's Pokedex"
@@ -87,9 +88,7 @@ function App() {
 
   return (
   
-      <div className="App">
-      <NavigationBar title={title}></NavigationBar>
-      
+      <div className="App">      
       <div className="dashboard">
         <div className="pokemon-left">
           <div className="top-bar">
@@ -117,31 +116,7 @@ function App() {
         </div>
         <div className="pokemon-side">
             {!activeName &&
-             <div style={{
-                 position: 'sticky',
-                 top: '5px'
-             }}>
-                <h1>Welcome to my Pokedex</h1>
-                <h4>This is a sample application using Gatsby</h4>
-                <h4>&copy; PokeApi</h4>
-                  <StaticImage
-                  src="./images/gatsby-icon.png"
-                  width={120}
-                  quality={95}
-                  formats={["AUTO", "WEBP", "AVIF"]}
-                  alt="A Gatsby astronaut"
-                  style={{ marginBottom: `1.45rem` }}
-                  />
-                  <StaticImage
-                  src="./images/logo192.png"
-                  width={120}
-                  quality={95}
-                  formats={["AUTO", "WEBP", "AVIF"]}
-                  alt="React logo"
-                  style={{ marginBottom: `1.45rem` }}
-                  />
-                <h4>Created by CJ.INES@OUTLOOK.PH</h4>
-            </div>
+             <AboutAuthor></AboutAuthor>
             }
             {activeName &&
                 <PokemonDetail name={activeName}/>

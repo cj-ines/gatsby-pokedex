@@ -9,8 +9,8 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "./layout.css"
+import NavigationBar from "../NavigationBar"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,10 +25,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
+        <NavigationBar title="Crisdell's Pokedex"></NavigationBar>
         <main>{children}</main>
         <footer
           style={{
             marginTop: `2rem`,
+            textAlign: 'center'
           }}
         >  demo by Crisdell James Ines
           © {new Date().getFullYear()}, Built with
