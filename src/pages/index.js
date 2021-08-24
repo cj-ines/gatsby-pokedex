@@ -8,7 +8,7 @@ const IndexPage = () => (
   <Layout>
     
     <Seo title="Pokedex" />
-    <App />
+    <App></App>
   </Layout>
 )
 

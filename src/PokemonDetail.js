@@ -1,9 +1,10 @@
 import Axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
+import PokemonSprites from "./components/PokemonSprites";
 
 
-function PokemonDetail({ name}) {
+function PokemonDetail({ name, fullDetail }) {
 
     const [pokemon, setPokemon] = useState(false);
     const [isPending, setIsPending] = useState(true);
@@ -35,9 +36,16 @@ function PokemonDetail({ name}) {
             
             {!isPending && 
             <div className="pokemon-portrait-stat">
-                <div>
+                <div style={{display: 'flex', alignItems: 'center'}}>
                     <img className="pokemon-portrait" src={pokemon.sprites.other['official-artwork'].front_default} alt={name} />
+                    {
+                        !isPending && fullDetail && 
+                        <div className="">
+                            <PokemonSprites name={name} sprites={pokemon.sprites} />
+                        </div>
+                    }
                 </div>
+                
                 <div className="pokemon-stats">
                     {pokemon.stats.map((stat, index) => 
                         <div className="pokemon-stat" key={index}> <span>{stat.stat.name}</span> <strong>{stat.base_stat}</strong> </div>
@@ -58,6 +66,7 @@ function PokemonDetail({ name}) {
                     )}
                 </div>
             }
+            
 
             { isPending && <h1>Loading...</h1> }
             

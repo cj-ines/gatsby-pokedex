@@ -1,13 +1,10 @@
 import './App.css';
 import Axios from 'axios';
-import * as React from "react"
-import { StaticImage } from 'gatsby-plugin-image';
+import React from "react"
 
 import PokemonItem from './PokemonItem';
 import PokemonDetail from './PokemonDetail';
-import NavigationBar from './NavigationBar';
-import StarWidget from './StarWidget';
-import filterWidget from './filterWidget';
+import { Link } from '@reach/router';
 import AboutAuthor from './components/AboutAuthor';
 
 function App() {
@@ -92,21 +89,21 @@ function App() {
       <div className="dashboard">
         <div className="pokemon-left">
           <div className="top-bar">
-          <div className="paging">
-            <button className="paging-prev" onClick={handleClickPrev}>Prev</button>
-            <span className="paging-current">{page}</span>
-            <button className="paging-prev" onClick={handleClickNext}>Next</button>
+            <div className="paging">
+              <button className="paging-prev" onClick={handleClickPrev}>Prev</button>
+              <span className="paging-current">{page}</span>
+              <button className="paging-prev" onClick={handleClickNext}>Next</button>
+            </div>
+            <div className="widgets">
+              {/* <StarWidget starList={starList} action={handleClickAction} /> */}
+              {/* <button className={'button-filter' + (activeFilter === 'caught' ? ' -active':'')} 
+                onClick={() => handleFilter(caughtList, 'all')}> All <span>{caughtList.length}</span></button> */}
+              <button className={'button-filter' + (activeFilter === 'caught' ? ' -active':'')} 
+                onClick={() => handleFilter(caughtList, 'caught')}> Caught <span>{caughtList.length}</span></button>
+              <button className={'button-filter' + (activeFilter === 'star' ? ' -active':'')} 
+                onClick={() => handleFilter(starList, 'star')}> Starred <span>{starList.length}</span></button>
+            </div>
           </div>
-          <div className="widgets">
-            {/* <StarWidget starList={starList} action={handleClickAction} /> */}
-            {/* <button className={'button-filter' + (activeFilter === 'caught' ? ' -active':'')} 
-              onClick={() => handleFilter(caughtList, 'all')}> All <span>{caughtList.length}</span></button> */}
-            <button className={'button-filter' + (activeFilter === 'caught' ? ' -active':'')} 
-              onClick={() => handleFilter(caughtList, 'caught')}> Caught <span>{caughtList.length}</span></button>
-            <button className={'button-filter' + (activeFilter === 'star' ? ' -active':'')} 
-              onClick={() => handleFilter(starList, 'star')}> Starred <span>{starList.length}</span></button>
-          </div>
-        </div>
           <div className="pokemon-list">
             {isPending && <h1>Loading...</h1> }
             {!isPending && pokemonList.map((pokemon, index) => 
@@ -116,10 +113,12 @@ function App() {
         </div>
         <div className="pokemon-side">
             {!activeName &&
-             <AboutAuthor></AboutAuthor>
+                <AboutAuthor></AboutAuthor>
             }
-            {activeName &&
-                <PokemonDetail name={activeName}/>
+            {activeName && <div>
+                  <Link to={`/pokemon-detail/${activeName}`}>Go full detail</Link>
+                  <PokemonDetail name={activeName}/>
+                </div>
             }
         </div>
       </div>
