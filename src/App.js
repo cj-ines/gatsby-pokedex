@@ -115,10 +115,11 @@ function App() {
             {!activeName &&
                 <AboutAuthor></AboutAuthor>
             }
-            {activeName && <div>
-                  <Link to={`/pokemon-detail/${activeName}`}>Go full detail</Link>
-                  <PokemonDetail name={activeName}/>
-                </div>
+            {activeName && 
+              <div>
+                <Link to={`/pokemon-detail/${activeName}`}>Go full detail</Link>
+                <PokemonDetail name={activeName}/>
+              </div>
             }
         </div>
       </div>
